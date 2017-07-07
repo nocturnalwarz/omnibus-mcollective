@@ -1,0 +1,11 @@
+*.gem
+.DS_Store
+.bundle
+.kitchen/
+.kitchen.local.yml
+vendor/bundle
+pkg/*
+.vagrant
+bin/*
+files/**/cache/
+vendor/cookbooks

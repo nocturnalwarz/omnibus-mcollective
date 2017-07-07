@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# Perform necessary mcollective setup steps
+# after package is installed.
+#
+
+PROGNAME=`basename $0`
+
+CONFIG_DIR=/etc/omnibus-mcollective
+INSTALLER_DIR=/opt/omnibus-mcollective
+PREFIX="/usr"
+
+error_exit()
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+[[ -d "$CONFIG_DIR" ]] || mkdir $CONFIG_DIR
+[[ -d "/var/lib/mcollective/plugins" ]] || mkdir -p "/var/lib/mcollective/plugins"
+
+for file in $INSTALLER_DIR/etc/*; do
+  if [[ ! -d $file && -f "$file"  && ! -f "$CONFIG_DIR/$(basename $file)" ]]; then
+    cp $file $CONFIG_DIR/
+  fi
+done
+
+rm -f $PREFIX/bin/mco
+rm -f $PREFIX/sbin/mcollectived
+
+ln -sf $INSTALLER_DIR/bin/mco $PREFIX/bin/omnibus-mco || error_exit "Cannot link mco to $PREFIX/bin"
+
+cp -f $INSTALLER_DIR/omnibus-mcollective.service /usr/lib/systemd/system/ || error_exit "Cannot copy /usr/ilb/systemd/system/omnibus-mcollective.service"
+
+/usr/bin/systemctl daemon-reload
+
+echo "Thank you for installing mcollective!"
+exit 0
