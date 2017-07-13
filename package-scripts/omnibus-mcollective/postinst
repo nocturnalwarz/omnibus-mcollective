@@ -25,8 +25,7 @@ for file in $INSTALLER_DIR/etc/*; do
   fi
 done
 
-rm -f $PREFIX/bin/mco
-rm -f $PREFIX/sbin/mcollectived
+rm -f $PREFIX/bin/omnibus-mco
 
 ln -sf $INSTALLER_DIR/bin/mco $PREFIX/bin/omnibus-mco || error_exit "Cannot link mco to $PREFIX/bin"
 

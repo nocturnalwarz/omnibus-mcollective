@@ -54,11 +54,8 @@ build do
     mkdir(::File.join(ruby_lib_dir, 'mcollective'))
     copy(::File.join(project_dir, "mcollective-#{version}", 'lib', '*'), ::File.join(ruby_lib_dir))
 
-    if File.exist?(File.join(project.files_path, 'plugins', 'mcollective'))
-        copy ::File.join(project.files_path, 'plugins'), install_dir
-    else
-        mkdir ::File.join(install_dir, "plugins", "mcollective")
-    end
+    mkdir ::File.join(install_dir, "plugins")
+    mkdir ::File.join(install_dir, "plugins", "mcollective")
 
     copy ::File.join(project_dir, "mcollective-#{version}", "etc"), install_dir
     copy ::File.join(project.files_path, 'omnibus-mcollective.service'), install_dir
