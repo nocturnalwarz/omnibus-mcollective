@@ -39,7 +39,7 @@ export USE_SYSTEM_GECODE=1
 gem install bundler
 
 bundle install --binstubs
-bundle exec omnibus build mcollective --no-timestamp
+bundle exec omnibus build mcollective --override append_timestamp:false
 
 
 

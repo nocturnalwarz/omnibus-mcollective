@@ -47,7 +47,6 @@ build do
      copy_bin(::File.join(project_dir, "mcollective-#{version}" ,file))
    end
     
-
     Dir.glob(::File.join(project_dir, "mcollective-#{version}", 'bin', '*')).each {|f| copy_bin(f)}
     ruby_lib_dir = ::File.join(install_dir, 'embedded', 'lib', 'ruby', '2.4.0')
 

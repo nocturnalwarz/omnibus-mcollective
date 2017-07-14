@@ -12,7 +12,7 @@ relative_path = "mcollective-shell-agent-#{version}"
 build do
   block do
     %w(agent application).each do |dir|
-      FileUtils.cp_r File.join(project_dir, "mcollective-package-agent-#{version}/lib/mcollective/", dir), ::File.join(install_dir, "plugins", "mcollective")
+      FileUtils.cp_r File.join(project_dir, "mcollective-shell-agent-#{version}/lib/mcollective/", dir), ::File.join(install_dir, "plugins", "mcollective")
     end
   end
 end

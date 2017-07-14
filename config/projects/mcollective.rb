@@ -13,7 +13,7 @@ homepage "https://puppetlabs.com/mcollective/introduction/"
 install_dir "#{default_root}/#{name}"
 
 build_version '2.11.0'
-build_iteration 3
+build_iteration 4
 
 # Creates required build directories
 dependency "preparation"
@@ -22,6 +22,8 @@ dependency "mcollective"
 dependency "mcollective-puppet-agent"
 dependency "mcollective-package-agent"
 dependency "mcollective-shell-agent"
+dependency "mcollective-service-agent"
+dependency "mcollective-filemgr-agent"
 
 override :ruby, version: "2.4.1"
 override :rubygems, version: "2.6.11"
