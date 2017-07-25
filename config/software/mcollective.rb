@@ -59,6 +59,6 @@ build do
     copy ::File.join(project_dir, "mcollective-#{version}", "etc"), install_dir
     copy ::File.join(project.files_path, 'omnibus-mcollective.service'), install_dir
 
-    FileUtils.chown "root", "root", Dir.glob(File.join(install_dir, "**"))
+    #FileUtils.chown "root", "root", Dir.glob(File.join(install_dir, "**"))
   end
 end
