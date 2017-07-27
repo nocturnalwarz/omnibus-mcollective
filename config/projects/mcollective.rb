@@ -13,7 +13,7 @@ homepage "https://puppetlabs.com/mcollective/introduction/"
 install_dir "#{default_root}/#{name}"
 
 build_version '2.11.0'
-build_iteration 4
+build_iteration ENV['BUILD_ITERATION']
 
 # Creates required build directories
 dependency "preparation"
