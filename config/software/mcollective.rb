@@ -1,10 +1,11 @@
 name "mcollective"
-default_version '2.11.0'
+default_version '2.11.1'
 
 dependency "ruby"
 dependency "rubygems"
 dependency "bundler"
 
+version("2.11.1") { source md5: 'c62cd13bc0be6e1f45dcbd22b7d9c1db' }
 version("2.11.0") { source md5: 'a17b450ae7d1289529fcee72ea124260' }
 
 source url: "http://downloads.puppetlabs.com/mcollective/mcollective-#{version}.tar.gz"
