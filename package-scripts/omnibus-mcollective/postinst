@@ -32,7 +32,7 @@ ln -sf $INSTALLER_DIR/bin/mco $PREFIX/bin/omnibus-mco || error_exit "Cannot link
 cp -f $INSTALLER_DIR/omnibus-mcollective.service /usr/lib/systemd/system/ || error_exit "Cannot copy /usr/ilb/systemd/system/omnibus-mcollective.service"
 
 /usr/bin/systemctl daemon-reload
-/usr/sbin/systemctl restart omnibus-mcollective.service
+/usr/bin/systemctl restart omnibus-mcollective.service
 
 echo "Thank you for installing mcollective!"
 exit 0
