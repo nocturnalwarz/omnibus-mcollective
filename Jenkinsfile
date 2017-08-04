@@ -7,8 +7,11 @@ pipeline {
 eval "$(rbenv init -)"
 export RBENV_ROOT=/opt/rbenv
 
+pwd
+ls -la
+
 bundle install --binstubs
-bin/omnibus build omnibus-mcollective'''
+'''
       }
     }
   }
