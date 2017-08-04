@@ -7,10 +7,7 @@ pipeline {
 eval "$(rbenv init -)"
 export RBENV_ROOT=/opt/rbenv
 
-pwd
-ls -la
-
-bundle install --binstubs
+USE_SYSTEM_GECODE=1 bundle install bundle install --path vender/bundle --binstubs
 '''
       }
     }
