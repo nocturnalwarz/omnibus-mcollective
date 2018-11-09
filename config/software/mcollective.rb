@@ -19,7 +19,7 @@ GEM_DEPENDENICES = %w( systemu json stomp i18n )
 build do
   gem (["install"] + GEM_DEPENDENICES + ["-n #{install_dir}/bin", "--no-rdoc", "--no-ri"]).join(" ")
   gem "install puppet --no-ri --no-rdoc"
-  gem "install rest-client --no-rsi --no-rdoc"
+  gem "install rest-client --no-ri --no-rdoc"
 
   # remove unneed directories
   ["docs",
