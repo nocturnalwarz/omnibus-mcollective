@@ -25,6 +25,7 @@ dependency "mcollective-shell-agent"
 dependency "mcollective-service-agent"
 dependency "mcollective-filemgr-agent"
 dependency "mcollective-yum-agent"
+dependency "mcollective-rest-agent"
 
 override :ruby, version: "2.4.1"
 override :rubygems, version: "2.6.11"
