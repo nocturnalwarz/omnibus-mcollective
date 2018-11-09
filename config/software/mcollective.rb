@@ -8,6 +8,8 @@ dependency "bundler"
 version("2.11.1") { source md5: 'c62cd13bc0be6e1f45dcbd22b7d9c1db' }
 version("2.11.0") { source md5: 'a17b450ae7d1289529fcee72ea124260' }
 
+fetcher_read_timeout(300)
+
 source url: "http://downloads.puppetlabs.com/mcollective/mcollective-#{version}.tar.gz"
 
 relative_path = "mcollective-#{version}"
