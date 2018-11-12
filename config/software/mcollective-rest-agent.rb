@@ -1,9 +1,10 @@
 name "mcollective-rest-agent"
-default_version "0.0.1"
+default_version "0.0.2"
 
 dependency "mcollective"
 
 version("0.0.1") { source md5: '6a5b410c7e6568fbc0ad68bedeef716a' }
+version("0.0.2") { source md5: '9703623aa9376e74316ba12b2487bf52' }
 
 source url: "https://github.com/nocturnalwarz/mcollective-rest/archive/#{version}.tar.gz"
 
