@@ -32,6 +32,12 @@ build do
     command "rm -rf #{install_dir}/embedded/#{dir}"
   end
 
+  # Create needed directories
+  ["plugins",
+   "plugins/mcollective"].each do |dir|
+      command "mkdir -p #{install_dir}/#{dir}"
+  end
+
   block do 
     def copy_bin(bin_file)
       target_filename = ::File.join(install_dir, "bin", ::File.basename(bin_file))
