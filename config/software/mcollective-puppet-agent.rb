@@ -1,9 +1,9 @@
 name "mcollective-puppet-agent"
-default_version "1.13.1"
+default_version "1.14.0"
 
 dependency "mcollective"
 
-version("1.13.1") { source md5: 'aee56b2b4542b8ffaee3ed40929be7ea' }
+version("1.14.0") { source md5: '88e82dfda2a2be5a6334ccebcc49149d' }
 
 source url: "https://github.com/puppetlabs/mcollective-puppet-agent/archive/#{version}.tar.gz"
 
